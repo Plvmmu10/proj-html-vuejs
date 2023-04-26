@@ -12,7 +12,9 @@
         </section>
 
         <!-- Special Category Section -->
-        <section></section>
+        <section class="row myContainer py-5">
+            <SpecialComponent />
+        </section>
     </div>
 </template>
 
@@ -20,12 +22,14 @@
 import JumbotronComponent from './JumbotronComponent.vue';
 import MainNav from './MainNav.vue';
 import JumboCard from './JumboCard.vue';
+import SpecialComponent from './SpecialComponent.vue';
 export default {
     name: 'MainComponent',
     components: {
         JumbotronComponent,
         MainNav,
         JumboCard,
+        SpecialComponent
     },
     data() {
         return {
