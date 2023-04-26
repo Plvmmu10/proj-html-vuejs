@@ -9,7 +9,7 @@
         <div>
             <ul class="d-flex h-100 align-items-center">
                 <li v-for="(item, index) in navItems" :key="index" class="px-4">
-                    <a href="#" @click="getActive(index)" :class="index === currentIndex ? 'active' : ''">{{ item }}</a>
+                    <a href="#" @mouseover="getActive(index)" :class="index === currentIndex ? 'active' : ''">{{ item }}</a>
                 </li>
             </ul>
         </div>
@@ -55,14 +55,12 @@ export default {
 <style lang="scss" scoped>
 @use '../assets/style/partials/variables' as *;
 
-ul {
-    list-style: none;
 
-    a {
-        text-decoration: none;
-        color: white;
-    }
+a {
+    text-decoration: none;
+    color: white;
 }
+
 
 .active {
     color: $secondary-color;
