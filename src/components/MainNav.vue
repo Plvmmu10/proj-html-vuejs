@@ -1,5 +1,5 @@
 <template>
-    <div class="myContainer py-5">
+    <div class="myContainer py-5 d-flex justify-content-center">
         <ul class="d-flex text-white">
             <li class="d-flex px-4">
                 <i class="fa-solid fa-truck pe-3"></i>
