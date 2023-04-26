@@ -17,7 +17,7 @@
         </section>
 
         <!-- First Slider with Our Products -->
-        <section>
+        <section class="py-5">
             <SliderComponent :sliderArray="productsList" :slide="productsList.object" :title="titlePro"
                 :topListItem="navItemFirst.object" :topListArray="navItemFirst" />
         </section>
@@ -70,8 +70,64 @@ export default {
                     img: 'img/01.jpg',
                     rating: 4,
                     name: 'Shopping Mahjang connect',
-                    firstPrice: `&pound;180.00`,
-                    secondPrice: `&pound;100.00`
+                    firstPrice: `180.00`,
+                    secondPrice: `100.00`
+                },
+                {
+                    img: 'img/02.jpg',
+                    rating: 2,
+                    name: 'Logitech Headphones',
+                    firstPrice: ``,
+                    secondPrice: `75.00`
+                },
+                {
+                    img: 'img/03.jpg',
+                    rating: 5,
+                    name: 'Boolean Red Gaming Pad',
+                    firstPrice: `5000.00`,
+                    secondPrice: `92.00`
+                },
+                {
+                    img: 'img/04.jpg',
+                    rating: 0,
+                    name: 'Juventus Joypad Zebra',
+                    firstPrice: `36.00`,
+                    secondPrice: `32.00`
+                },
+                {
+                    img: 'img/05.jpg',
+                    rating: 2,
+                    name: 'VR Boolean Connector',
+                    firstPrice: ``,
+                    secondPrice: `250.00`
+                },
+                {
+                    img: 'img/06.jpg',
+                    rating: 5,
+                    name: 'Sony Gaming Headset',
+                    firstPrice: `50.00`,
+                    secondPrice: `40.00`
+                },
+                {
+                    img: 'img/07.jpg',
+                    rating: 2,
+                    name: 'Sony Inferno Joypad',
+                    firstPrice: ``,
+                    secondPrice: `210.00`
+                },
+                {
+                    img: 'img/08.jpg',
+                    rating: 5,
+                    name: 'Purple Tiger Joypad',
+                    firstPrice: `250.00`,
+                    secondPrice: `200.00`
+                },
+                {
+                    img: 'img/09.jpg',
+                    rating: 4,
+                    name: 'Buddy and Lucky Solitaire',
+                    firstPrice: ``,
+                    secondPrice: `100.00`
                 }
             ],
             dealList: [
