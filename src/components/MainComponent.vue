@@ -21,6 +21,13 @@
             <SliderComponent :sliderArray="productsList" :slide="productsList.object" :title="titlePro"
                 :topListItem="navItemFirst.object" :topListArray="navItemFirst" />
         </section>
+
+        <!-- Second section with 'jumboCard' -->
+        <section>
+            <div class="row myContainer">
+                <JumboCard v-for="item in jContentSecond" :item="item" />
+            </div>
+        </section>
     </div>
 </template>
 
