@@ -1,9 +1,7 @@
 <template>
   <!-- Header with top-header and navbar -->
   <header>
-    <TopHeader />
-    <hr class="text-white p-0 m-0">
-    <NavbarComponent />
+    <HeaderComponent />
   </header>
 
   <!-- Main with jumbo and all the sections -->
@@ -13,13 +11,11 @@
 </template>
 
 <script>
-import TopHeader from './components/TopHeader.vue';
-import NavbarComponent from './components/NavbarComponent.vue';
+import HeaderComponent from './components/HeaderComponent.vue';
 import MainComponent from './components/MainComponent.vue';
 export default {
   components: {
-    TopHeader,
-    NavbarComponent,
+    HeaderComponent,
     MainComponent
   }
 }
