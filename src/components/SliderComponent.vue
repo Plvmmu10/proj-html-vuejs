@@ -7,8 +7,17 @@
             <TopSlider :listItem="topListItem" :listArray="topListArray" />
         </div>
 
-        <div class="row">
+        <div class="row flex-nowrap overflow-hidden">
             <SliderCard v-for="slide in sliderArray" :item="slide" />
+
+            <!-- Change slide buttons -->
+            <button class="prevBtn myBtn" @click="prevCard">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <button class="nextBtn myBtn" @click="nextCard">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
         </div>
     </div>
 </template>
@@ -27,10 +36,32 @@ export default {
         'sliderArray',
         'title',
         'topListItem',
-        'topListArray'
+        'topListArray',
+        'index'
     ],
     data() {
         return {
+            currentIndex: 0
+        }
+    },
+    methods: {
+        nextCard() {
+            if (this.currentIndex === this.sliderArray.length - 1) {
+                this.currentIndex = 0
+            } else {
+                this.currentIndex++
+            }
+
+            console.log(this.currentIndex)
+        },
+        prevCard() {
+            if (this.currentIndex === 0) {
+                this.currentIndex = this.sliderArray.length - 1
+            } else {
+                this.currentIndex--
+            }
+
+            console.log(this.currentIndex)
         }
     }
 
@@ -43,5 +74,46 @@ export default {
 hr {
     width: 50px;
     color: $secondary-color;
+}
+
+.row {
+    position: relative;
+
+    .myBtn {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background-color: transparent;
+        border: 1px solid rgb(211, 211, 211, 1);
+        color: rgb(211, 211, 211, 1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .3s;
+
+        i {
+            font-size: 15px;
+        }
+
+        &:hover {
+            color: $secondary-color;
+            background-color: $light-color;
+        }
+    }
+
+    .prevBtn {
+        position: absolute;
+        left: 0;
+        bottom: 50%;
+        z-index: 1000;
+        translate: 0% -80%;
+    }
+
+    .nextBtn {
+        position: absolute;
+        right: 0;
+        bottom: 50%;
+        translate: 0% -80%;
+    }
 }
 </style>
