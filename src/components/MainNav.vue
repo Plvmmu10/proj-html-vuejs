@@ -46,10 +46,7 @@
 
 <script>
 export default {
-    name: 'MainNav',
-    data() {
-        return
-    }
+    name: 'MainNav'
 }
 </script>
 
