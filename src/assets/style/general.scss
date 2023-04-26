@@ -6,3 +6,18 @@ $fa-font-path: './webfonts';
 @import '@fortawesome/fontawesome-free/scss/regular.scss';
 
 @import 'bootstrap/scss/bootstrap';
+
+body {
+    background-image: url('img/body-bg.jpg');
+    background-size: cover;
+}
+
+.myContainer {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.subtitle {
+    color: rgb(211, 211, 211, 0.6);
+    margin: 0;
+}
