@@ -3,7 +3,7 @@
         <div class="myContainer">
             <div class="d-flex flex-column w-25">
 
-                <div id="upcoming">
+                <div class="upcoming">
                     <h4 class="m-0 p-1 fw-bold">Upcoming Stock</h4>
                 </div>
 
@@ -36,10 +36,7 @@ export default {
     background-size: cover;
     background-position: center;
 
-    #upcoming {
-        background-color: $secondary-color;
-        width: 200px;
-    }
+
 
     .btn {
         background-color: $light-color;
