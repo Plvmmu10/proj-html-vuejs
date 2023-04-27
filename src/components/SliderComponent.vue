@@ -7,8 +7,8 @@
             <TopSlider :listItem="topListItem" :listArray="topListArray" />
         </div>
 
-        <div class="row flex-nowrap overflow-hidden">
-            <SliderCard v-for="slide in sliderArray" :item="slide" />
+        <div class="row flex-nowrap">
+            <SliderCard v-for="(slide, index) in sliderArray" :key="index" :item="slide" />
 
             <!-- Change slide buttons -->
             <button class="prevBtn myBtn" @click="prevCard">
@@ -78,6 +78,8 @@ hr {
 
 .row {
     position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
 
     .myBtn {
         width: 35px;
@@ -115,5 +117,13 @@ hr {
         bottom: 50%;
         translate: 0% -80%;
     }
+}
+
+.active {
+    opacity: 1;
+}
+
+.deactive {
+    opacity: 0;
 }
 </style>
