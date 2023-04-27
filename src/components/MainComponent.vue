@@ -30,8 +30,9 @@
         </section>
 
         <!-- Second Slider with deal of the day -->
-        <section>
-
+        <section class="py-5">
+            <SliderComponent :sliderArray="dealList" :slide="dealList.object" :title="titleDeal"
+                :topListItem="navItemSecond.object" :topListArray="navItemSecond" />
         </section>
 
         <!-- Our Team Section -->
@@ -40,7 +41,7 @@
         </section>
 
         <!-- Game Blogs Section with Team Logos -->
-        <section class="py-3">
+        <section class="pt-3 pb-5">
             <BlogsComponent />
         </section>
     </div>
@@ -157,7 +158,69 @@ export default {
                 }
             ],
             dealList: [
-
+                {
+                    img: 'img/10.jpg',
+                    rating: 2,
+                    name: 'Orange Joypad',
+                    firstPrice: ``,
+                    secondPrice: `100.00`
+                },
+                {
+                    img: 'img/11.jpg',
+                    rating: 5,
+                    name: 'PS4 Dualsense',
+                    firstPrice: `50.00`,
+                    secondPrice: `40.00`
+                },
+                {
+                    img: 'img/12.jpg',
+                    rating: 2,
+                    name: 'Trust Gaming Headset',
+                    firstPrice: `25.00`,
+                    secondPrice: `10.00`
+                },
+                {
+                    img: 'img/13.jpg',
+                    rating: 4,
+                    name: 'XBOX Military',
+                    firstPrice: `70.00`,
+                    secondPrice: `55.00`
+                },
+                {
+                    img: 'img/14.jpg',
+                    rating: 3,
+                    name: 'Boolean Headset',
+                    firstPrice: ``,
+                    secondPrice: `45.00`
+                },
+                {
+                    img: 'img/15.jpg',
+                    rating: 3,
+                    name: 'Kingon II',
+                    firstPrice: `65.00`,
+                    secondPrice: `43.00`
+                },
+                {
+                    img: 'img/16.jpg',
+                    rating: 5,
+                    name: 'Sony White Dualsense',
+                    firstPrice: `80.00`,
+                    secondPrice: `65.00`
+                },
+                {
+                    img: 'img/17.jpg',
+                    rating: 5,
+                    name: 'Grand Theft Auto 5',
+                    firstPrice: `80.00`,
+                    secondPrice: `25.00`
+                },
+                {
+                    img: 'img/18.jpg',
+                    rating: 4,
+                    name: 'Razer Gaming Deamon',
+                    firstPrice: ``,
+                    secondPrice: `100.00`
+                }
             ],
             navItemFirst: [
                 'Featured',
