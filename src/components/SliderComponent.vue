@@ -11,13 +11,13 @@
             <SliderCard v-for="(slide, index) in sliderArray" :key="index" :item="slide" />
 
             <!-- Change slide buttons -->
-            <button class="prevBtn myBtn" @click="prevCard">
+            <!-- <button class="prevBtn myBtn" @click="prevCard">
                 <i class="fa-solid fa-chevron-left"></i>
             </button>
 
             <button class="nextBtn myBtn" @click="nextCard">
                 <i class="fa-solid fa-chevron-right"></i>
-            </button>
+            </button> -->
         </div>
     </div>
 </template>
@@ -41,29 +41,67 @@ export default {
     ],
     data() {
         return {
-            currentIndex: 0
+            // activeSlider: [],
+            currentIndex: 0,
         }
     },
     methods: {
-        nextCard() {
-            if (this.currentIndex === this.sliderArray.length - 1) {
-                this.currentIndex = 0
-            } else {
-                this.currentIndex++
-            }
+        // addActive(currentIndex) {
+        //     this.activeSlider = [];
 
-            console.log(this.currentIndex)
-        },
-        prevCard() {
-            if (this.currentIndex === 0) {
-                this.currentIndex = this.sliderArray.length - 1
-            } else {
-                this.currentIndex--
-            }
+        //     let activeIndex = currentIndex;
 
-            console.log(this.currentIndex)
-        }
-    }
+        //     // this.activeSlider.push(this.sliderArray[activeIndex])
+        //     // this.activeSlider.push(this.sliderArray[activeIndex + 1])
+        //     // this.activeSlider.push(this.sliderArray[activeIndex + 2])
+        //     // this.activeSlider.push(this.sliderArray[activeIndex + 3])
+
+        //     // this.activeSlider.push(this.sliderArray[0])
+        //     // this.activeSlider.push(this.sliderArray[1])
+        //     // this.activeSlider.push(this.sliderArray[2])
+        //     // this.activeSlider.push(this.sliderArray[3])
+
+        //     if ((activeIndex + 3) > this.sliderArray.length - 1) {
+        //         this.activeSlider.push(this.sliderArray[0])
+        //         this.activeSlider.push(this.sliderArray[1])
+        //         this.activeSlider.push(this.sliderArray[2])
+        //         this.activeSlider.push(this.sliderArray[3])
+        //     } else {
+        //         this.activeSlider.push(this.sliderArray[activeIndex])
+        //         this.activeSlider.push(this.sliderArray[activeIndex + 1])
+        //         this.activeSlider.push(this.sliderArray[activeIndex + 2])
+        //         this.activeSlider.push(this.sliderArray[activeIndex + 3])
+        //     }
+
+
+        // },
+        // removeActive() {
+        // },
+        // nextCard() {
+
+        //     if (this.currentIndex === this.sliderArray.length - 1) {
+        //         this.currentIndex = 0
+        //     } else {
+        //         this.currentIndex++
+        //     }
+
+        //     // this.addActive(this.currentIndex)
+
+        // },
+        // prevCard() {
+        //     if (this.currentIndex === 0) {
+        //         this.currentIndex = this.sliderArray.length - 1
+        //     } else {
+        //         this.currentIndex--
+        //     }
+
+        //     this.removeActive(this.currentIndex)
+
+        // }               
+    },
+    // mounted() {
+    //     this.addActive(this.currentIndex);
+    // }
 
 }
 </script>
