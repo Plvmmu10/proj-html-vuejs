@@ -85,9 +85,8 @@ export default {
 
 .options-box {
     width: 100%;
-    height: 100%;
     position: absolute;
-    bottom: -60%;
+    bottom: -15%;
     left: 0;
 
     li {
