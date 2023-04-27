@@ -64,6 +64,10 @@ export default {
 <style lang="scss" scoped>
 @use '../assets/style/partials/variables' as *;
 
+.card {
+    height: 100%;
+}
+
 .card-body {
     background-color: rgb(21, 17, 29);
     position: relative;
