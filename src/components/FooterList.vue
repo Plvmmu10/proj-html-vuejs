@@ -41,15 +41,15 @@
             There are many variations of passages of form humour or randomised
         </p>
 
-        <div class="input-group mt-4">
-            <input type="text" name="emailInput" id="emailInput" class="form-control" aria-describedby="basic-addon2">
 
-            <div class="input-group-append">
-                <span class="input-group-text" id="basic-addon2">
-                    d
-                </span>
-            </div>
+        <div class="d-flex pt-4">
+            <input type="text" name="textInput" id="textInput" class="form-control border-0 rounded-0">
+            <button class="myBtn p-2">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
         </div>
+
+
 
 
         <div class="social-box d-flex">
@@ -121,6 +121,14 @@ ul {
             cursor: pointer;
             color: $secondary-color;
         }
+    }
+}
+
+.myBtn {
+    border: 0;
+
+    &:hover {
+        color: $secondary-color;
     }
 }
 </style>
