@@ -8,7 +8,7 @@
         <!-- Navbar items -->
         <div>
             <ul class="d-flex h-100 align-items-center">
-                <li v-for="(item, index) in navItems" :key="index" class="px-4">
+                <li v-for="(item, index) in navArray" :key="index" class="px-4">
                     <a href="#" @mouseover="getActive(index)" :class="index === currentIndex ? 'active' : ''">{{ item }}</a>
                 </li>
             </ul>
@@ -31,16 +31,9 @@
 <script>
 export default {
     name: 'NavbarComponent',
+    props: ['navArray'],
     data() {
         return {
-            navItems: [
-                'Home',
-                'Shop',
-                'Blog',
-                'Media',
-                'ShortCode',
-                'Features'
-            ],
             currentIndex: true
         }
     },
