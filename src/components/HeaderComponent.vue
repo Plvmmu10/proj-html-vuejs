@@ -2,7 +2,7 @@
     <div>
         <TopHeader />
         <hr class="text-white p-0 m-0">
-        <NavbarComponent />
+        <NavbarComponent :navArray="navItems" />
     </div>
 </template>
 
@@ -14,6 +14,18 @@ export default {
     components: {
         TopHeader,
         NavbarComponent
+    },
+    data() {
+        return {
+            navItems: [
+                'Home',
+                'Shop',
+                'Blog',
+                'Media',
+                'ShortCode',
+                'Features'
+            ]
+        }
     }
 }
 </script>
