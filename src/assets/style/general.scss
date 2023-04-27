@@ -26,7 +26,11 @@ body {
 .upcoming {
     background-color: $secondary-color;
     width: 200px;
-    border-radius: 20% 0%;
+    transform: skew(-20deg);
+
+    h3 {
+        padding: .2rem;
+    }
 }
 
 ul {
