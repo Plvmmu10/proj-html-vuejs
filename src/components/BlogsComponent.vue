@@ -42,6 +42,17 @@
                 </div>
             </div>
         </div>
+
+
+        <div class="row d-flex py-5">
+            <div class="brand-container" v-for="image in teamImages">
+                <div class="brand-box">
+                    <img :src="image">
+                </div>
+            </div>
+        </div>
+
+
     </div>
 </template>
 
@@ -66,6 +77,13 @@ export default {
                     date: 'Jan 18,2021',
                     text: 'Anyway REPS is a NYC agency repres enting photographers'
                 }
+            ],
+            teamImages: [
+                'img/brand-01.png',
+                'img/brand-02.png',
+                'img/brand-03.png',
+                'img/brand-04.png',
+                'img/brand-05.png',
             ],
 
             status: false
@@ -113,6 +131,9 @@ i {
     }
 }
 
+.brand-container {
+    width: calc(100% / 5);
+}
 
 .active {
     opacity: 1;
