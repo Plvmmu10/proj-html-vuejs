@@ -28,6 +28,21 @@
                 <JumboCard v-for="item in jContentSecond" :item="item" />
             </div>
         </section>
+
+        <!-- Second Slider with deal of the day -->
+        <section>
+
+        </section>
+
+        <!-- Our Team Section -->
+        <section id="our-team" class="my-5">
+            <OurTeam />
+        </section>
+
+        <!-- Game Blogs Section with Team Logos -->
+        <section class="py-3">
+            <BlogsComponent />
+        </section>
     </div>
 </template>
 
@@ -37,6 +52,8 @@ import MainNav from './MainNav.vue';
 import JumboCard from './JumboCard.vue';
 import SpecialComponent from './SpecialComponent.vue';
 import SliderComponent from './SliderComponent.vue';
+import OurTeam from './OurTeam.vue';
+import BlogsComponent from './BlogsComponent.vue';
 export default {
     name: 'MainComponent',
     components: {
@@ -44,7 +61,9 @@ export default {
         MainNav,
         JumboCard,
         SpecialComponent,
-        SliderComponent
+        SliderComponent,
+        OurTeam,
+        BlogsComponent
     },
     data() {
         return {
@@ -159,4 +178,9 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+#our-team {
+    background-image: url('img/parallax.jpg');
+    height: 500px;
+}
+</style>
