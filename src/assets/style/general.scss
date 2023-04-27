@@ -38,3 +38,24 @@ ul {
     width: 5%;
     background-color: $secondary-color;
 }
+
+// Scrollbar config
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $light-color;
+    border-radius: 25px;
+}
+
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: $secondary-color;
+}
