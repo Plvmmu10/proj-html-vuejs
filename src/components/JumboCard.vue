@@ -4,10 +4,10 @@
 
         <div class="j-content">
             <div class="upcoming">
-                <h3 class="m-0">{{ item.genre }}</h3>
+                <h4 class="m-0">{{ item.genre }}</h4>
             </div>
 
-            <h3 class="m-0 text-white">{{ item.text }}</h3>
+            <h4 class="m-0 text-white">{{ item.text }}</h4>
         </div>
     </div>
 </template>

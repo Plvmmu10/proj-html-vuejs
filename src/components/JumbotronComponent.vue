@@ -4,7 +4,7 @@
             <div class="d-flex flex-column w-25">
 
                 <div class="upcoming">
-                    <h4 class="m-0 p-1 fw-bold">Upcoming Stock</h4>
+                    <h4 class="m-0">Upcoming Stock</h4>
                 </div>
 
                 <div class="text-white mt-3 mb-5">
