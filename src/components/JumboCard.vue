@@ -35,6 +35,7 @@ export default {
         position: absolute;
         top: 35%;
         left: 55%;
+        width: 250px;
     }
 }
 </style>
