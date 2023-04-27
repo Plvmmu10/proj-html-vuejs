@@ -2,14 +2,20 @@
     <div class="row myContainer py-5">
         <FooterList :footerArray="footerList" :socialArray="socialList" />
     </div>
+
+    <hr style="height: 10px; color: white;">
+
+    <BottomFooter />
 </template>
 
 <script>
 import FooterList from './FooterList.vue';
+import BottomFooter from './BottomFooter.vue';
 export default {
     name: 'FooterComponent',
     components: {
-        FooterList
+        FooterList,
+        BottomFooter
     },
     data() {
         return {
