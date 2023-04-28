@@ -25,6 +25,12 @@ export default {
 .j-card {
     position: relative;
 
+    &:hover {
+        scale: 1.1;
+        z-index: 999;
+        transition: 1s;
+    }
+
     img {
         width: 100%;
         display: block;
