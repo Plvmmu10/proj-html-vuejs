@@ -34,7 +34,7 @@ export default {
     .j-content {
         position: absolute;
         top: 35%;
-        left: 55%;
+        left: 50%;
         width: 250px;
     }
 }
