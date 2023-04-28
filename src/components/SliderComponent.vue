@@ -50,7 +50,7 @@ export default {
         nextCard() {
             this.sliderContainer.scrollBy(this.sliderWidth / 4, 0);
 
-            if ((this.sliderContainer.scrollLeft + this.sliderWidth + 5) >= this.sliderContainer.scrollWidth) {
+            if ((this.sliderContainer.scrollLeft + this.sliderWidth + 6) >= this.sliderContainer.scrollWidth) {
                 this.sliderContainer.scrollLeft = 0
             }
         },
