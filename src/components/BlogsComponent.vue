@@ -175,6 +175,13 @@ i {
 
 .brand-container {
     width: calc(100% / 5);
+    opacity: .5;
+
+    &:hover {
+        opacity: 1;
+        scale: 1.5;
+        transition: 1s;
+    }
 }
 
 .active {
