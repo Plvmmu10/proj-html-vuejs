@@ -5,42 +5,53 @@
             <div class="horizontal"></div>
         </div>
 
-        <div class="row">
-            <div class="col-4" v-for="blog in blogsList">
-                <div class="card bg-transparent border-0" @click="setActive">
+        <div class="position-relative">
+            <div class="row d-flex flex-nowrap" ref="sliderBox">
+                <div class="col-4" v-for="blog in blogsList">
+                    <div class="card bg-transparent border-0" @click="setActive">
 
-                    <!-- Card header with card image -->
-                    <div class="card-header border-0">
-                        <img :src="blog.img" class="w-100 h-100">
-                    </div>
-
-                    <!-- Card body with card content -->
-                    <div class="card-body">
-                        <div class="d-flex">
-                            <p class="subtitle pe-3">
-                                <i class="fa-regular fa-calendar-days"></i> {{ blog.date }}
-                            </p>
-
-                            <p class="subtitle">
-                                <i class="fa-regular fa-comment"></i> 0 Comment
-                            </p>
+                        <!-- Card header with card image -->
+                        <div class="card-header border-0">
+                            <img :src="blog.img" class="w-100 h-100">
                         </div>
 
-                        <p class="text-white">{{ blog.text }}</p>
-                    </div>
+                        <!-- Card body with card content -->
+                        <div class="card-body">
+                            <div class="d-flex">
+                                <p class="subtitle pe-3">
+                                    <i class="fa-regular fa-calendar-days"></i> {{ blog.date }}
+                                </p>
 
-                    <!-- Blog hover actions -->
-                    <div class="blog-icons d-flex" :class="status ? 'active' : ''">
-                        <div class="icon-box">
-                            <i class="fa-solid fa-plus"></i>
+                                <p class="subtitle">
+                                    <i class="fa-regular fa-comment"></i> 0 Comment
+                                </p>
+                            </div>
+
+                            <p class="text-white">{{ blog.text }}</p>
                         </div>
 
-                        <div class="icon-box">
-                            <i class="fa-solid fa-link"></i>
+                        <!-- Blog hover actions -->
+                        <div class="blog-icons d-flex" :class="status ? 'active' : ''">
+                            <div class="icon-box">
+                                <i class="fa-solid fa-plus"></i>
+                            </div>
+
+                            <div class="icon-box">
+                                <i class="fa-solid fa-link"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Change slide buttons -->
+            <button class="prevBtn myBtn" @click="prevCard">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <button class="nextBtn myBtn" @click="nextCard">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
         </div>
 
 
@@ -76,7 +87,17 @@ export default {
                     img: 'img/Nisi-ut-aliquid-ex-ea-com-1400x878_t.jpg',
                     date: 'Jan 18,2021',
                     text: 'Anyway REPS is a NYC agency repres enting photographers'
-                }
+                },
+                {
+                    img: 'img/Architecto-beatae-vitae-dicta.jpg',
+                    date: 'Jan 25,2021',
+                    text: 'Anyway REPS is a NYC agency repres enting photographers'
+                },
+                {
+                    img: 'img/Blandit-praesen-volupta.jpg',
+                    date: 'Jan 18,2021',
+                    text: 'Anyway REPS is a NYC agency repres enting photographers'
+                },
             ],
             teamImages: [
                 'img/brand-01.png',
@@ -86,13 +107,34 @@ export default {
                 'img/brand-05.png',
             ],
 
-            status: false
+            status: false,
+            container: null,
+            containerWidth: null
         }
     },
     methods: {
         setActive() {
             this.status = !this.status
+        },
+        nextCard() {
+            this.container.scrollBy(this.containerWidth / 3, 0);
+
+
+            if ((this.container.scrollLeft + this.containerWidth + 2) >= this.container.scrollWidth) {
+                this.container.scrollLeft = 0
+            }
+        },
+        prevCard() {
+            this.container.scrollBy(- this.containerWidth / 3, 0);
+
+            if (this.container.scrollLeft === 0) {
+                this.container.scrollLeft = this.container.scrollWidth
+            }
         }
+    },
+    mounted() {
+        this.container = this.$refs.sliderBox;
+        this.containerWidth = this.container.offsetWidth
     }
 }
 
@@ -137,5 +179,59 @@ i {
 
 .active {
     opacity: 1;
+}
+
+.myBtn {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid rgb(211, 211, 211, 1);
+    color: rgb(211, 211, 211, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+
+    i {
+        font-size: 15px;
+    }
+
+    &:hover {
+        color: $secondary-color;
+        background-color: $light-color;
+    }
+}
+
+.prevBtn {
+    position: absolute;
+    left: -2%;
+    bottom: 50%;
+    z-index: 1000;
+    translate: 0% -80%;
+}
+
+.nextBtn {
+    position: absolute;
+    right: -2%;
+    bottom: 50%;
+    translate: 0% -80%;
+}
+
+.row {
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    // Scrollbar config
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    -ms-overflow-style:none;
+
+    scrollbar-width:none;
+
+    scroll-behavior: smooth;
+
 }
 </style>
