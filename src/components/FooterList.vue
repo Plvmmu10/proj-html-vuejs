@@ -104,11 +104,17 @@ ul {
         color: $secondary-color;
     }
 
+
     #email:before {
         font-family: 'Font Awesome 6 Free';
         content: '\f0e0';
         font-weight: 900;
         margin: 0 15px 0 0px;
+        color: $secondary-color;
+    }
+
+    #email:hover {
+        cursor: pointer;
         color: $secondary-color;
     }
 }
