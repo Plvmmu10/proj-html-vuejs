@@ -1,13 +1,14 @@
 <template>
     <div class="myContainer h-100">
-        <div class="row flex-nowrap h-100 w-100 overflow-auto">
+        <div class="row flex-nowrap h-100 w-100 overflow-hidden position-relative">
             <div class="col-12 d-flex align-items-center" v-for="(member, index) in teamList" :key="index">
                 <div class="card bg-transparent border-0">
+
                     <!-- Header of Card with images -->
                     <div class="card-header d-flex justify-content-center border-0">
                         <div class="card-image">
                             <div class="img-box">
-                                <img :src="member.img" :alt="member.name">
+                                <img :src="teamList[currentIndex].img" :alt="teamList[currentIndex].name">
                             </div>
 
                             <div class="quote-box">
@@ -19,7 +20,9 @@
                     <!-- Body of Card with info and text-->
                     <div class="card-body text-center">
                         <div class="role-box">
-                            <h5 class="text-white">{{ member.name }} <span class="role">({{ member.role }})</span></h5>
+                            <h5 class="text-white">{{ teamList[currentIndex].name }} <span class="role">({{
+                                teamList[currentIndex].role
+                            }})</span></h5>
                         </div>
 
                         <div class="text-box ">
@@ -30,7 +33,14 @@
                             </p>
                         </div>
                     </div>
+
+
                 </div>
+            </div>
+
+            <div class="sliderButtons position-absolute">
+                <i v-for="(item, index) in  teamList " :key="index" class="fa-solid fa-circle mx-2"
+                    @click="nextSlide(index)" :class="index === currentIndex ? 'button-active' : ''"></i>
             </div>
         </div>
     </div>
@@ -62,7 +72,9 @@ export default {
         }
     },
     methods: {
-
+        nextSlide(index) {
+            this.currentIndex = index;
+        }
     }
 }
 </script>
@@ -102,5 +114,26 @@ export default {
 
 .role {
     color: $secondary-color;
+}
+
+.button-active {
+    color: $secondary-color;
+    opacity: 1;
+}
+
+.sliderButtons {
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-5%, 0);
+}
+
+i {
+    color: $light-color;
+    opacity: .5;
+
+    &:hover {
+        opacity: 1;
+        transition: .5s;
+    }
 }
 </style>
